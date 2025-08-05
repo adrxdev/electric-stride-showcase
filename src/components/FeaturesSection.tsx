@@ -54,18 +54,18 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in-up">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 fade-in-up text-foreground">
             Why Choose 
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent ml-3">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent ml-2">
               EcoRide
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-up">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto fade-in-up leading-relaxed">
             Our electric scooters combine cutting-edge technology with sustainable design 
-            to deliver the perfect urban mobility solution.
+            to deliver the perfect urban mobility solution for today's professionals.
           </p>
         </div>
 
@@ -73,27 +73,27 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="feature-card fade-in-up card-hover glass rounded-xl p-6 text-center group cursor-pointer"
+              className="feature-card fade-in-up rounded-xl p-8 text-center group cursor-pointer"
             >
-              <div className={`w-16 h-16 ${feature.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className={`h-8 w-8 ${feature.color}`} />
+              <div className={`w-14 h-14 ${feature.bgColor} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform duration-200`}>
+                <feature.icon className={`h-7 w-7 ${feature.color}`} />
               </div>
               
-              <h3 className="text-xl font-semibold mb-3 text-foreground">
+              <h3 className="text-lg font-semibold mb-4 text-foreground">
                 {feature.title}
               </h3>
               
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm">
                 {feature.description}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Additional tech specs */}
-        <div className="mt-20 glass rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-center mb-8">Technical Excellence</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {/* Technical specifications */}
+        <div className="mt-24 bg-card border border-border rounded-2xl p-8 shadow-sm">
+          <h3 className="text-2xl font-semibold text-center mb-10 text-foreground">Technical Specifications</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { label: 'Motor Power', value: '500W' },
               { label: 'Top Speed', value: '45 km/h' },
@@ -105,8 +105,8 @@ const FeaturesSection = () => {
               { label: 'Warranty', value: '2 years' },
             ].map((spec, index) => (
               <div key={index} className="fade-in-up">
-                <div className="text-2xl font-bold text-primary mb-1">{spec.value}</div>
-                <div className="text-sm text-muted-foreground">{spec.label}</div>
+                <div className="text-xl font-semibold text-primary mb-2">{spec.value}</div>
+                <div className="text-sm text-muted-foreground font-medium">{spec.label}</div>
               </div>
             ))}
           </div>

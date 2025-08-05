@@ -2,66 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* EcoRide Electric Scooter Design System - Modern, Tech-Inspired */
+/* EcoRide Professional Design System */
 
 @layer base {
   :root {
-    /* Core brand colors */
-    --background: 0 0% 6%;
-    --foreground: 0 0% 95%;
+    /* Core brand colors - Professional palette */
+    --background: 0 0% 99%;
+    --foreground: 222 15% 25%;
 
     /* Card system */
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 15% 25%;
 
     /* Popover system */
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 15% 25%;
 
-    /* Electric blue primary */
-    --primary: 212 100% 50%;
-    --primary-foreground: 0 0% 95%;
-    --primary-glow: 212 100% 65%;
+    /* Professional blue primary */
+    --primary: 220 90% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 220 90% 55%;
+    --primary-dark: 220 90% 25%;
 
-    /* Eco green secondary */
-    --secondary: 142 75% 50%;
-    --secondary-foreground: 0 0% 95%;
-    --secondary-glow: 142 75% 65%;
+    /* Professional teal secondary */
+    --secondary: 180 25% 35%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 180 25% 55%;
 
-    /* Muted grays */
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
+    /* Sophisticated grays */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
     /* Accent system */
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 15% 25%;
 
     /* Status colors */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 98%;
 
     /* Form elements */
-    --border: 0 0% 18%;
-    --input: 0 0% 12%;
-    --ring: 212 100% 50%;
+    --border: 220 13% 91%;
+    --input: 0 0% 100%;
+    --ring: 220 90% 35%;
 
-    /* Modern radius system */
-    --radius: 0.75rem;
+    /* Professional radius system */
+    --radius: 0.5rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(var(--secondary) / 0.9));
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    /* Subtle gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.95), hsl(var(--secondary) / 0.85));
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
 
-    /* Shadows */
-    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
-    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+    /* Professional shadows */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-large: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Smooth animations */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -81,33 +83,36 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222 15% 7%;
+    --foreground: 220 14% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 15% 9%;
+    --card-foreground: 220 14% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 15% 9%;
+    --popover-foreground: 220 14% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 220 90% 55%;
+    --primary-foreground: 222 15% 7%;
+    --primary-light: 220 90% 65%;
+    --primary-dark: 220 90% 45%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 180 25% 55%;
+    --secondary-foreground: 222 15% 7%;
+    --secondary-light: 180 25% 65%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 222 15% 15%;
+    --muted-foreground: 220 9% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 222 15% 15%;
+    --accent-foreground: 220 14% 96%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 220 14% 96%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 222 15% 20%;
+    --input: 222 15% 15%;
+    --ring: 220 90% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -130,45 +135,47 @@
 }
 
 @layer components {
-  /* Glass morphism effects */
+  /* Professional glass effect */
   .glass {
     background: var(--gradient-glass);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-subtle);
   }
 
-  /* Hero gradient background */
+  /* Hero section styling */
   .hero-gradient {
     background: var(--gradient-hero);
   }
 
-  /* Primary gradient button */
+  /* Professional button gradients */
   .btn-primary-gradient {
     background: var(--gradient-primary);
     transition: var(--transition-smooth);
+    box-shadow: var(--shadow-subtle);
   }
 
   .btn-primary-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
   }
 
-  /* Secondary gradient button */
   .btn-secondary-gradient {
     background: var(--gradient-secondary);
     transition: var(--transition-smooth);
+    box-shadow: var(--shadow-subtle);
   }
 
   .btn-secondary-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 30px hsl(var(--secondary) / 0.3);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
   }
 
-  /* Scroll animations */
+  /* Refined animations */
   .fade-in-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
   }
 
   .fade-in-up.animate {
@@ -176,9 +183,9 @@
     transform: translateY(0);
   }
 
-  /* Floating animation */
+  /* Subtle floating effect */
   .float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
 
   @keyframes float {
@@ -186,22 +193,34 @@
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
     }
   }
 
-  /* Glow effect */
-  .glow {
-    box-shadow: var(--shadow-glow);
-  }
-
-  /* Card hover effect */
+  /* Professional card hover */
   .card-hover {
     transition: var(--transition-smooth);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-subtle);
   }
 
   .card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    border-color: hsl(var(--primary) / 0.2);
+  }
+
+  /* Feature card styling */
+  .feature-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition-smooth);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    border-color: hsl(var(--primary) / 0.3);
   }
 }

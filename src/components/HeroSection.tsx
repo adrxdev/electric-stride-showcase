@@ -35,24 +35,8 @@ const HeroSection = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 hero-gradient opacity-60"></div>
-      
-      {/* Floating particles */}
-      <div className="absolute inset-0">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/30 rounded-full animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 2}s`,
-            }}
-          />
-        ))}
-      </div>
+      {/* Professional overlay */}
+      <div className="absolute inset-0 hero-gradient opacity-80"></div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -68,41 +52,43 @@ const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 fade-in-up max-w-2xl mx-auto">
-            Experience the ultimate urban mobility with our premium electric scooters. 
-            Eco-friendly, efficient, and engineered for the modern world.
+          <p className="text-lg md:text-xl text-white/90 mb-12 fade-in-up max-w-3xl mx-auto font-light leading-relaxed">
+            Transform your daily commute with our premium electric scooters. 
+            Combining cutting-edge technology, sustainable design, and unmatched performance 
+            for the modern professional.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 fade-in-up">
-            <Button size="lg" className="btn-primary-gradient text-lg px-8 py-6 hover:scale-105 transition-transform">
-              Shop Now
-              <ArrowRight className="ml-2 h-5 w-5" />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 fade-in-up">
+            <Button size="lg" className="btn-primary-gradient text-base px-10 py-4 font-medium">
+              Explore Collection
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
             <Button 
               variant="outline" 
               size="lg" 
-              className="glass border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
+              className="border-white/40 text-white hover:bg-white/20 hover:border-white/60 text-base px-10 py-4 font-medium backdrop-blur-sm"
             >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
+              <Play className="mr-2 h-4 w-4" />
+              View Demo
             </Button>
           </div>
 
-          {/* Stats */}
+          {/* Key Features */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 fade-in-up">
             {[
-              { number: '50+', label: 'km Range' },
-              { number: '45', label: 'km/h Max Speed' },
-              { number: '15kg', label: 'Lightweight' },
-              { number: '3hrs', label: 'Fast Charging' },
+              { number: '50+', label: 'km Range', unit: 'km' },
+              { number: '45', label: 'Max Speed', unit: 'km/h' },
+              { number: '15', label: 'Weight', unit: 'kg' },
+              { number: '3', label: 'Charge Time', unit: 'hrs' },
             ].map((stat, index) => (
-              <div key={index} className="glass rounded-lg p-4 backdrop-blur-sm">
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
+              <div key={index} className="glass rounded-lg p-6 backdrop-blur-sm border border-white/20">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2">
                   {stat.number}
+                  <span className="text-lg text-white/70 ml-1">{stat.unit}</span>
                 </div>
-                <div className="text-sm text-gray-300">{stat.label}</div>
+                <div className="text-sm text-white/80 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>

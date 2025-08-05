@@ -33,12 +33,12 @@ const Navigation = () => {
     <>
       {/* Fixed Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass backdrop-blur-lg shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-background/95 backdrop-blur-lg border-b border-border shadow-sm' : 'bg-transparent'
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <NavLink to="/" className="text-2xl font-bold text-primary hover:text-primary-glow transition-colors">
+            <NavLink to="/" className="text-2xl font-bold text-primary hover:text-primary-light transition-colors">
               EcoRide
             </NavLink>
 
