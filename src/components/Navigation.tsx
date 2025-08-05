@@ -22,46 +22,65 @@ const Navigation = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/shop', label: 'Shop' },
-    { to: '/about', label: 'About' },
-    { to: '/contact', label: 'Contact' },
+    { to: '/', label: 'Home', section: 'hero' },
+    { label: 'Features', section: 'features' },
+    { label: 'Specs', section: 'specs' },
+    { label: 'Testimonials', section: 'testimonials' },
+    { to: '/shop', label: 'Buy Now' },
   ];
 
   return (
     <>
-      {/* Fixed Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-lg border-b border-border shadow-sm' : 'bg-transparent'
+      {/* Futuristic Navigation */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'glass-neon backdrop-blur-xl border-b border-primary/20' : 'bg-transparent'
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <NavLink to="/" className="text-2xl font-bold text-primary hover:text-primary-light transition-colors">
+            <NavLink to="/" className="text-2xl font-bold text-neon hover:text-primary-glow transition-all duration-300">
               EcoRide
             </NavLink>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <NavLink
-                  key={link.to}
-                  to={link.to}
-                  className={({ isActive }) =>
-                    `font-medium transition-colors hover:text-primary ${
-                      isActive ? 'text-primary' : 'text-foreground'
-                    }`
-                  }
-                >
-                  {link.label}
-                </NavLink>
+                link.to ? (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    className={({ isActive }) =>
+                      `font-medium transition-all duration-300 hover:text-primary ${
+                        isActive ? 'text-primary' : 'text-foreground'
+                      }`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                ) : (
+                  <button
+                    key={link.section}
+                    onClick={() => scrollToSection(link.section!)}
+                    className="font-medium transition-all duration-300 hover:text-primary text-foreground"
+                  >
+                    {link.label}
+                  </button>
+                )
               ))}
               
-              <Button variant="outline" size="sm" className="relative">
+              <Button className="btn-neon-primary relative overflow-hidden">
                 <ShoppingCart className="h-4 w-4 mr-2" />
                 Cart
-                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground rounded-full text-xs w-5 h-5 flex items-center justify-center animate-pulse">
                   0
                 </span>
               </Button>
@@ -80,23 +99,33 @@ const Navigation = () => {
 
           {/* Mobile Navigation */}
           {isOpen && (
-            <div className="md:hidden glass backdrop-blur-lg border-t border-border/20 mt-2 rounded-lg">
-              <div className="px-4 py-4 space-y-3">
+            <div className="md:hidden glass-neon backdrop-blur-xl border-t border-primary/20 mt-4 rounded-lg">
+              <div className="px-6 py-6 space-y-4">
                 {navLinks.map((link) => (
-                  <NavLink
-                    key={link.to}
-                    to={link.to}
-                    className={({ isActive }) =>
-                      `block font-medium transition-colors hover:text-primary ${
-                        isActive ? 'text-primary' : 'text-foreground'
-                      }`
-                    }
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </NavLink>
+                  link.to ? (
+                    <NavLink
+                      key={link.to}
+                      to={link.to}
+                      className={({ isActive }) =>
+                        `block font-medium transition-all duration-300 hover:text-primary ${
+                          isActive ? 'text-primary' : 'text-foreground'
+                        }`
+                      }
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </NavLink>
+                  ) : (
+                    <button
+                      key={link.section}
+                      onClick={() => scrollToSection(link.section!)}
+                      className="block font-medium transition-all duration-300 hover:text-primary text-foreground text-left"
+                    >
+                      {link.label}
+                    </button>
+                  )
                 ))}
-                <Button variant="outline" size="sm" className="w-full mt-4">
+                <Button className="w-full mt-6 btn-neon-primary">
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   Cart (0)
                 </Button>
@@ -106,14 +135,14 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Scroll to Top Button */}
+      {/* Neon Scroll to Top Button */}
       {showScrollTop && (
         <Button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 rounded-full w-12 h-12 btn-primary-gradient"
+          className="fixed bottom-8 right-8 z-50 rounded-full w-14 h-14 btn-neon-secondary shadow-neon-secondary"
           size="sm"
         >
-          <ChevronUp className="h-5 w-5" />
+          <ChevronUp className="h-6 w-6" />
         </Button>
       )}
     </>
